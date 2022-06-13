@@ -1,0 +1,21 @@
+.card-list{
+    width: 85vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #fcf4ac;
+    border: 1px solid darkblue;
+    border-radius: 25px;
+    cursor: pointer;
+    transform: translateZ(0);
+    transform: transform 0.25s ease-out;
+}
+
+.card-list :hover{
+    transform: scale(1.05);
+}

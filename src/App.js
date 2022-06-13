@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import { Component } from 'react'; 
 import './App.css';
+import CardList from './components/card-list/card-list.component';
+import SearchBox from './components/search-bar/search-bar.component';
 
-function App() {
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      monsters:[],
+      searchField : ''
+    }
+  }
+
+componentDidMount(){
+  fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => response.json())
+  .then(users => 
+    this.setState( 
+      () => {
+    return { monsters: users };
+  })
+  )
+  }
+
+onSearchChange = (event) => {
+  const searchField = event.target.value.toLocaleLowerCase();
+  this.setState(
+    () => {
+    return { searchField }; 
+  });
+}
+
+render() {
+  const { monsters, searchField} = this.state;
+  const {onSearchChange} = this;
+  const filtered = monsters.filter((item) =>{
+    return item.name.toLocaleLowerCase().includes(searchField);
+  });
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1 className='main-title'>Props Return Lesson</h1>
+      <SearchBox onSearchChange = { onSearchChange } placeholder= 'Search-Monster' className='searchbox-monster' />
+      <CardList monsters={filtered}/>   
     </div>
   );
+  }
 }
 
 export default App;
