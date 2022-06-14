@@ -16,6 +16,6 @@
     transform: transform 0.25s ease-out;
 }
 
-.card-list :hover{
+.card-container:hover{
     transform: scale(1.05);
 }
