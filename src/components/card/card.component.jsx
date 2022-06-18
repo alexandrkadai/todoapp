@@ -1,13 +1,13 @@
 import './card.style.css';
 
-const Card = ({monstersa}) => (
+const Card = ({monstersa : {id, email, name}}) => (
     
             <div className='card-container'>
-            <img alt={`monster ${monstersa.name}`}
-              src={`https://robohash.org/${monstersa.id+3}?set2&size=180x180`} 
+            <img alt={`monster ${name}`}
+              src={`https://robohash.org/${id+3}?set2&size=180x180`} 
               />
-            <h2>{monstersa.name}</h2>
-            <p>{monstersa.email}</p>
+            <h2>{name}</h2>
+            <p>{email}</p>
             </div>
         )
     
