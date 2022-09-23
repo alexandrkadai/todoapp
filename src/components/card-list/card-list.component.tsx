@@ -1,10 +1,15 @@
+import { Monster } from '../../App';
 import Card from '../card/card.component';
 import './card-list.style.css';
 
-const CardList = ({ monsters }) => (
+type CardListProps = {
+  monsters: Monster[];
+};
+
+const CardList = ({ monsters }: CardListProps) => (
   <div className="card-list">
-    {monsters.map((item) => {
-      return <Card key={item.id} monstersa={item} />;
+    {monsters.map((monster) => {
+      return <Card key={monster.id} monster={monster} />;
     })}
   </div>
 );
