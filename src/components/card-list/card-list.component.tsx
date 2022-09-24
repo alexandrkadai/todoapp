@@ -14,17 +14,4 @@ const CardList = ({ monsters }: CardListProps) => (
   </div>
 );
 
-// class CardList extends Component{
-//     render(){
-//         const { monsters } = this.props;
-//         return <div className='card-list'>
-//         {monsters.map(item => {
-//             return(
-//             <Card key={item.id} monstersa = { item }/>
-//         );
-//         })}
-//         </div>
-//     }
-// }
-
 export default CardList;

@@ -1,5 +1,4 @@
 import { Monster } from '../../App';
-import './card.style.css';
 
 type CardProps = {
   monster: Monster;

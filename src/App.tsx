@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="main-title">Components Functional and Class Lesson</h1>
+      <h1 className="main-title">Simple Search App</h1>
       <SearchBox
         onSearchChange={onSearchChange}
         placeholder="Search-Monster"
