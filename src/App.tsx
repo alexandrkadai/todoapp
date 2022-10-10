@@ -3,7 +3,7 @@ import CardList from './components/card-list/card-list.component';
 import SearchBox from './components/search-bar/search-bar.component';
 import { getData } from './utils/fetch.data';
 
-import './App.css';
+import './App.scss';
 
 export type Monster = {
   id: string;

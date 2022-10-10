@@ -1,6 +1,6 @@
 import { Monster } from '../../App';
 import Card from '../card/card.component';
-import './card-list.style.css';
+import './card-list.style.scss';
 
 type CardListProps = {
   monsters: Monster[];
